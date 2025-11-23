@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "magnetium",
+	"version": "1.0",
+	"name": "Magnetium",
+	"description": "A magnet to pickup items",
+	"authors": [
+		"whospeo"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": "https://github.com/whospeo/magnetium"
+	},
+	"license": "MIT",
+	"icon": "assets/magnetium/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.whospeo.magnetium.Magnetium"
+		],
+		"fabric-datagen": [
+			"com.whospeo.magnetium.MagnetiumDataGenerator"
+		],
+        "Client": [
+            "com.whospeo.magnetium.MagnetiumClient"
+        ]
+	},
+	"mixins": [
+		"magnetium.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.1",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
