@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "M": {
+      "item": "magnetium:magnet_tier_2"
+    }
+  },
+  "pattern": [
+    "DDD",
+    "DMD",
+    "DDD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "magnetium:magnet_tier_3"
+  }
+}

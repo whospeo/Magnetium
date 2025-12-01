@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_magnet_tier_2": {
+      "conditions": {
+        "items": [
+          {
+            "items": "magnetium:magnet_tier_2"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "magnetium:magnet_tier_3"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_magnet_tier_2"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "magnetium:magnet_tier_3"
+    ]
+  }
+}

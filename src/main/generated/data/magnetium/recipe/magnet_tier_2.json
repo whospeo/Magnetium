@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "M": {
+      "item": "magnetium:magnet_tier_1"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GMG",
+    "GGG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "magnetium:magnet_tier_2"
+  }
+}

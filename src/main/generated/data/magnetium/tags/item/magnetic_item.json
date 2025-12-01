@@ -1,0 +1,11 @@
+{
+  "values": [
+    "magnetium:magnet_tier_1",
+    "magnetium:magnet_tier_2",
+    "magnetium:magnet_tier_3",
+    "magnetium:north_pole",
+    "magnetium:south_pole",
+    "magnetium:magnetic_hammer",
+    "magnetium:iron_stick"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_north_pole": {
+      "conditions": {
+        "items": [
+          {
+            "items": "magnetium:north_pole"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_south_pole": {
+      "conditions": {
+        "items": [
+          {
+            "items": "magnetium:south_pole"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "magnetium:magnetic_hammer"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_north_pole",
+      "has_south_pole"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "magnetium:magnetic_hammer"
+    ]
+  }
+}

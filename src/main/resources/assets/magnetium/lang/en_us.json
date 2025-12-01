@@ -1,0 +1,11 @@
+{
+  "item.magnetium.magnet_tier_1": "Magnet Tier 1",
+  "item.magnetium.magnet_tier_2": "Magnet Tier 2",
+  "item.magnetium.magnet_tier_3": "Magnet Tier 3",
+  "item.magnetium.magnetic_hammer": "Magnetic Hammer",
+  "item.magnetium.north_pole": "North Pole",
+  "item.magnetium.south_pole": "South Pole",
+  "item.magnetium.iron_stick": "Iron Stick",
+
+  "itemgroup.magnetium.magnetium_items": "Magnetium"
+}
