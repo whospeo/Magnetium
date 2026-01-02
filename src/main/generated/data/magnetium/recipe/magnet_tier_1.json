@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
-    "N": {
-      "item": "magnetium:north_pole"
-    },
-    "S": {
-      "item": "magnetium:south_pole"
-    }
+    "I": "minecraft:iron_ingot",
+    "N": "magnetium:north_pole",
+    "S": "magnetium:south_pole"
   },
   "pattern": [
     "N S",

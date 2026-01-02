@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:blue_dye"
-    },
-    {
-      "item": "minecraft:iron_ingot"
-    }
+    "minecraft:blue_dye",
+    "minecraft:iron_ingot"
   ],
   "result": {
     "count": 1,
