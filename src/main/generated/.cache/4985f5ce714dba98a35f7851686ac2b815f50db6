@@ -1,8 +1,15 @@
-// 1.21.3	2026-01-02T23:58:37.2779405	Magnetium/Model Definitions
-bb80c9a59298f4d5637b9048b458ba2c37429cc4 assets\magnetium\models\item\south_pole.json
-c101f5cb7797d035014f0980466e5e6a7bedc10d assets\magnetium\models\item\magnet_tier_3.json
-0d7de134d25333656aca7644cd35d799a0168c1b assets\magnetium\models\item\magnetic_hammer.json
-81d23680e89a3c0ae1f8c24c6171c1ca688d4c47 assets\magnetium\models\item\magnet_tier_2.json
-0f676347f092d8ec511b4f1ae21199af74214504 assets\magnetium\models\item\iron_stick.json
-ecc2c587249e2d20ef82851a436828448a5e41c2 assets\magnetium\models\item\north_pole.json
-d3e903ccd7fa7b84ea330717c923512bbc1f6ea4 assets\magnetium\models\item\magnet_tier_1.json
+// 1.21.4	-999999999-01-01T00:00:00	Magnetium/Model Definitions
+16d0ba8db905a5daf0d33910e40e026a711c4822 assets/magnetium/items/iron_stick.json
+80bcca0058c4f00026fb52d44d591c12feae8d65 assets/magnetium/items/magnet_tier_1.json
+69b6d8feac60632e2766e1476fb49afd57dd1854 assets/magnetium/items/magnet_tier_2.json
+01ea44dad93184781d6134d3c3635810d57f1898 assets/magnetium/items/magnet_tier_3.json
+dfa80cdb97d5377235e0201ef4e46dbbfa8581d9 assets/magnetium/items/magnetic_hammer.json
+4e3cb3e7d1e8e3c54fd4fd1637f0d4bbb5c80f60 assets/magnetium/items/north_pole.json
+71f2b72ddb38d72a5ab664e7f2ab08141fa98c54 assets/magnetium/items/south_pole.json
+0f676347f092d8ec511b4f1ae21199af74214504 assets/magnetium/models/item/iron_stick.json
+d3e903ccd7fa7b84ea330717c923512bbc1f6ea4 assets/magnetium/models/item/magnet_tier_1.json
+81d23680e89a3c0ae1f8c24c6171c1ca688d4c47 assets/magnetium/models/item/magnet_tier_2.json
+c101f5cb7797d035014f0980466e5e6a7bedc10d assets/magnetium/models/item/magnet_tier_3.json
+0d7de134d25333656aca7644cd35d799a0168c1b assets/magnetium/models/item/magnetic_hammer.json
+ecc2c587249e2d20ef82851a436828448a5e41c2 assets/magnetium/models/item/north_pole.json
+bb80c9a59298f4d5637b9048b458ba2c37429cc4 assets/magnetium/models/item/south_pole.json
