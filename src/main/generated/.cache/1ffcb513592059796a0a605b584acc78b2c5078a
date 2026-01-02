@@ -1,0 +1,15 @@
+// 1.21.5	-999999999-01-01T00:00:00	Magnetium/Magnetium Recipes
+2ec680535502176772de276ab9ef24b912f1ec2c data/magnetium/advancement/recipes/misc/iron_stick.json
+6b0079070afe86e4ac394e0c1de07bcabdf725f8 data/magnetium/advancement/recipes/misc/magnet_tier_1.json
+82e5182c33f5cf905e4178047fe2387417b7c8db data/magnetium/advancement/recipes/misc/magnet_tier_2.json
+631a1cf0950375a45811a89587ff5d4a652055ad data/magnetium/advancement/recipes/misc/magnet_tier_3.json
+44f9cc143ae65bb9aad50318d878f6b9e99767ce data/magnetium/advancement/recipes/misc/magnetic_hammer.json
+e844be7d27112814ca161930d5cbfec686ee523a data/magnetium/advancement/recipes/misc/north_pole.json
+902b8b71c2efe4766b947c1aa7b18b8fc0dfd078 data/magnetium/advancement/recipes/misc/south_pole.json
+25b5dbc044f71b4635678bc792517737daecd491 data/magnetium/recipe/iron_stick.json
+8999fcd522dd78d15a678e8a71e88536c6032dfc data/magnetium/recipe/magnet_tier_1.json
+e2d9c7fc5d90060d8c25ccf77055f22084579f01 data/magnetium/recipe/magnet_tier_2.json
+3ac1b393c7a620553849bf4b0868ed0b005603ef data/magnetium/recipe/magnet_tier_3.json
+770e6d56b9edc09b790d53c2ee60b74cd4677bd2 data/magnetium/recipe/magnetic_hammer.json
+b7fd73e50f64e11aa3671cc3d90e5990fda02fbf data/magnetium/recipe/north_pole.json
+d9bad7be0e31d664cff36f0452ed69a52318b164 data/magnetium/recipe/south_pole.json

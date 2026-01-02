@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "magnetium:item/magnetic_hammer"
+  }
+}

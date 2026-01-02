@@ -1,6 +1,6 @@
 package com.whospeo.magnetium.item.custom;
 
-import net.minecraft.item.MiningToolItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -12,9 +12,9 @@ import net.minecraft.util.math.Direction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HammerItem extends MiningToolItem {
+public class HammerItem extends Item {
     public HammerItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
-        super(material, BlockTags.PICKAXE_MINEABLE,attackDamage, attackSpeed, settings);
+        super(settings.tool(material, BlockTags.PICKAXE_MINEABLE,attackDamage, attackSpeed, 3));
     }
 
     public static List<BlockPos> getBlocksToBeDestroyed(int range, BlockPos initialBlockPos, ServerPlayerEntity player) {
