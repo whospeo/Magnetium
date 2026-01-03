@@ -86,15 +86,15 @@ public class ModItems {
                 player.getZ() + COLLECTION_RADIUS
         );
 
-        var items = player.getWorld().getEntitiesByClass(ItemEntity.class, area, itemEntity ->
+        var items = player.getEntityWorld().getEntitiesByClass(ItemEntity.class, area, itemEntity ->
                 itemEntity.isAlive() && !itemEntity.cannotPickup()
         );
 
-        Vec3d playerPos = player.getPos();
+        Vec3d playerPos = player.getEntityPos();
 
         for (ItemEntity itemEntity : items) {
 
-            Vec3d direction = playerPos.subtract(itemEntity.getPos()).normalize();
+            Vec3d direction = playerPos.subtract(itemEntity.getEntityPos()).normalize();
 
             itemEntity.addVelocity(
                     direction.x * ATTRACTION_SPEED,
