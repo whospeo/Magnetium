@@ -49,7 +49,7 @@ public class HammerTickHandler {
                 player.getZ() + COLLECTION_RADIUS
         );
 
-        var items = player.getEntityWorld().getEntitiesByClass(ItemEntity.class, area, itemEntity ->
+        var items = player.getWorld().getEntitiesByClass(ItemEntity.class, area, itemEntity ->
                 itemEntity.isAlive() && !itemEntity.cannotPickup() &&
                         itemEntity.getOwner() != player
         );

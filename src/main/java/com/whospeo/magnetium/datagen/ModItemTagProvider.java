@@ -15,7 +15,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ModTags.Items.MAGNETIC_ITEMS)
+        valueLookupBuilder(ModTags.Items.MAGNETIC_ITEMS)
                 .add(ModItems.MAGNET)
                 .add(ModItems.MAGNET_TIER_2)
                 .add(ModItems.MAGNET_TIER_3)
