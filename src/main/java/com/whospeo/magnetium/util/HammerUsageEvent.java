@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
@@ -19,7 +20,7 @@ public class HammerUsageEvent implements PlayerBlockBreakEvents.Before{
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
 
     @Override
-    public boolean beforeBlockBreak(World world, PlayerEntity player, BlockPos pos,
+    public boolean beforeBlockBreak( World world, PlayerEntity player, BlockPos pos,
                                     BlockState state, @Nullable BlockEntity blockEntity) {
         ItemStack mainHandItem = player.getMainHandStack();
 
