@@ -17,7 +17,7 @@ public class Magnetium implements ModInitializer {
 	@Override
 	public void onInitialize() {
         ModItems.registerModItems();
-        ModItemGroups.registerItemGroups();
+        ModItemGroups.register();
 
         PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
         HammerTickHandler.register();

@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
 	"id": "magnetium",
-	"version": "1.0",
+	"version": "1.0.11",
 	"name": "Magnetium",
-	"description": "A magnet to pickup items",
+	"description": "A mod that adds magnets and their components to Minecraft.",
 	"authors": [
 		"whospeo"
 	],

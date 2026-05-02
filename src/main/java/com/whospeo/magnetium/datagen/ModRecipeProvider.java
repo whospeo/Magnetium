@@ -3,85 +3,86 @@ package com.whospeo.magnetium.datagen;
 import com.whospeo.magnetium.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.recipe.RecipeExporter;
-import net.minecraft.data.recipe.RecipeGenerator;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.world.item.Item;
 
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
-    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup wrapperLookup, RecipeExporter recipeExporter) {
-        return new RecipeGenerator(wrapperLookup, recipeExporter) {
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+        return new RecipeProvider(provider, recipeOutput) {
             @Override
-            public void generate() {
+            public void buildRecipes() {
+                HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
 
-                createShaped(RecipeCategory.MISC, ModItems.MAGNET)
+                shaped(RecipeCategory.MISC, ModItems.MAGNET)
                         .pattern("N S")
                         .pattern("III")
                         .pattern("   ")
-                        .input('N', ModItems.NORTH_POLE)
-                        .input('S', ModItems.SOUTH_POLE)
-                        .input('I', Items.IRON_INGOT)
-                        .criterion(hasItem(ModItems.NORTH_POLE), conditionsFromItem(ModItems.NORTH_POLE))
-                        .criterion(hasItem(ModItems.SOUTH_POLE), conditionsFromItem(ModItems.SOUTH_POLE))
-                        .offerTo(recipeExporter);
+                        .define('N', ModItems.NORTH_POLE)
+                        .define('S', ModItems.SOUTH_POLE)
+                        .define('I', net.minecraft.world.item.Items.IRON_INGOT)
+                        .unlockedBy(getHasName(ModItems.NORTH_POLE), has(ModItems.NORTH_POLE))
+                        .unlockedBy(getHasName(ModItems.SOUTH_POLE), has(ModItems.SOUTH_POLE))
+                        .save(output);
 
-                createShaped(RecipeCategory.MISC, ModItems.MAGNET_TIER_2)
+                shaped(RecipeCategory.MISC, ModItems.MAGNET_TIER_2)
                         .pattern("GGG")
                         .pattern("GMG")
                         .pattern("GGG")
-                        .input('G', Items.GOLD_INGOT)
-                        .input('M', ModItems.MAGNET)
-                        .criterion(hasItem(ModItems.MAGNET), conditionsFromItem(ModItems.MAGNET))
-                        .offerTo(recipeExporter);
+                        .define('G', net.minecraft.world.item.Items.GOLD_INGOT)
+                        .define('M', ModItems.MAGNET)
+                        .unlockedBy(getHasName(ModItems.MAGNET), has(ModItems.MAGNET))
+                        .save(output);
 
-                createShaped(RecipeCategory.MISC, ModItems.MAGNET_TIER_3)
+                shaped(RecipeCategory.MISC, ModItems.MAGNET_TIER_3)
                         .pattern("DDD")
                         .pattern("DMD")
                         .pattern("DDD")
-                        .input('D', Items.DIAMOND)
-                        .input('M', ModItems.MAGNET_TIER_2)
-                        .criterion(hasItem(ModItems.MAGNET_TIER_2), conditionsFromItem(ModItems.MAGNET_TIER_2))
-                        .offerTo(recipeExporter);
+                        .define('D', net.minecraft.world.item.Items.DIAMOND)
+                        .define('M', ModItems.MAGNET_TIER_2)
+                        .unlockedBy(getHasName(ModItems.MAGNET_TIER_2), has(ModItems.MAGNET_TIER_2))
+                        .save(output);
 
-                createShaped(RecipeCategory.MISC, ModItems.MAGNETIC_HAMMER)
+                shaped(RecipeCategory.MISC, ModItems.MAGNETIC_HAMMER)
                         .pattern("NIS")
                         .pattern(" I ")
                         .pattern(" I ")
-                        .input('N', ModItems.NORTH_POLE)
-                        .input('S', ModItems.SOUTH_POLE)
-                        .input('I', ModItems.IRON_STICK)
-                        .criterion(hasItem(ModItems.NORTH_POLE), conditionsFromItem(ModItems.NORTH_POLE))
-                        .criterion(hasItem(ModItems.SOUTH_POLE), conditionsFromItem(ModItems.SOUTH_POLE))
-                        .offerTo(recipeExporter);
+                        .define('N', ModItems.NORTH_POLE)
+                        .define('S', ModItems.SOUTH_POLE)
+                        .define('I', ModItems.IRON_STICK)
+                        .unlockedBy(getHasName(ModItems.NORTH_POLE), has(ModItems.NORTH_POLE))
+                        .unlockedBy(getHasName(ModItems.SOUTH_POLE), has(ModItems.SOUTH_POLE))
+                        .save(output);
 
-                createShaped(RecipeCategory.MISC, ModItems.IRON_STICK)
+                shaped(RecipeCategory.MISC, ModItems.IRON_STICK)
                         .pattern(" I ")
                         .pattern(" I ")
                         .pattern("   ")
-                        .input('I', Items.IRON_INGOT)
-                        .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
-                        .offerTo(recipeExporter);
+                        .define('I', net.minecraft.world.item.Items.IRON_INGOT)
+                        .unlockedBy(getHasName(net.minecraft.world.item.Items.IRON_INGOT), has(net.minecraft.world.item.Items.IRON_INGOT))
+                        .save(output);
 
+                shapeless(RecipeCategory.MISC, ModItems.NORTH_POLE)
+                        .requires(net.minecraft.world.item.Items.RED_DYE)
+                        .requires(net.minecraft.world.item.Items.IRON_INGOT)
+                        .unlockedBy(getHasName(net.minecraft.world.item.Items.IRON_INGOT), has(net.minecraft.world.item.Items.IRON_INGOT))
+                        .save(output);
 
-                createShapeless(RecipeCategory.MISC, ModItems.NORTH_POLE)
-                        .input(Items.RED_DYE)
-                        .input(Items.IRON_INGOT)
-                        .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
-                        .offerTo(recipeExporter);
-
-                createShapeless(RecipeCategory.MISC, ModItems.SOUTH_POLE)
-                        .input(Items.BLUE_DYE)
-                        .input(Items.IRON_INGOT)
-                        .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
-                        .offerTo(recipeExporter);
+                shapeless(RecipeCategory.MISC, ModItems.SOUTH_POLE)
+                        .requires(net.minecraft.world.item.Items.BLUE_DYE)
+                        .requires(net.minecraft.world.item.Items.IRON_INGOT)
+                        .unlockedBy(getHasName(net.minecraft.world.item.Items.IRON_INGOT), has(net.minecraft.world.item.Items.IRON_INGOT))
+                        .save(output);
             }
         };
     }

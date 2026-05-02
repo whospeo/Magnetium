@@ -2,30 +2,39 @@ package com.whospeo.magnetium.item;
 
 import com.whospeo.magnetium.Magnetium;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+
+import java.util.List;
 
 public class ModItemGroups {
+    public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
+            BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(Magnetium.MOD_ID, "creative_tab")
+    );
+    public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModItems.MAGNET))
+            .title(Component.translatable("itemgroup.magnetium.magnetium_items"))
+            .displayItems((params, output) -> {
+                output.accept(ModItems.NORTH_POLE);
+                output.accept(ModItems.SOUTH_POLE);
+                output.accept(ModItems.IRON_STICK);
+                output.accept(ModItems.MAGNET);
+                output.accept(ModItems.MAGNET_TIER_2);
+                output.accept(ModItems.MAGNET_TIER_3);
+                output.accept(ModItems.MAGNETIC_HAMMER);
+            })
+            .build();
 
-    public static final ItemGroup MAGNETIUM_ITEMS    = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(Magnetium.MOD_ID, "magnetium_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.MAGNET))
-                    .displayName(Text.translatable("itemgroup.magnetium.magnetium_items"))
-                    .entries((displayContext, entries) -> {
-                        entries.add(ModItems.NORTH_POLE);
-                        entries.add(ModItems.SOUTH_POLE);
-                        entries.add(ModItems.MAGNET);
-                        entries.add(ModItems.MAGNET_TIER_2);
-                        entries.add(ModItems.MAGNET_TIER_3);
-                        entries.add(ModItems.MAGNETIC_HAMMER);
-                        entries.add(ModItems.IRON_STICK);
-                    }).build());
-
-    public static void registerItemGroups() {
-        Magnetium.LOGGER.info("Registering Item Groups for " + Magnetium.MOD_ID);
+    public static void register() {
+        Registry.register(
+                BuiltInRegistries.CREATIVE_MODE_TAB,
+                CUSTOM_CREATIVE_TAB_KEY,
+                CUSTOM_CREATIVE_TAB
+        );
     }
 }
