@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "magnetium",
-	"version": "1.26.1.1",
+	"version": "1.26.1.2",
 	"name": "Magnetium",
 	"description": "A mod that adds magnets and their components to Minecraft.",
 	"authors": [
