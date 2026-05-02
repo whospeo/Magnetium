@@ -1,7 +1,7 @@
 package com.whospeo.magnetium.item;
 
 import com.whospeo.magnetium.Magnetium;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -16,7 +16,7 @@ public class ModItemGroups {
     public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
             BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(Magnetium.MOD_ID, "creative_tab")
     );
-    public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricItemGroup.builder()
+    public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricCreativeModeTab.builder()
             .icon(() -> new ItemStack(ModItems.MAGNET))
             .title(Component.translatable("itemgroup.magnetium.magnetium_items"))
             .displayItems((params, output) -> {
