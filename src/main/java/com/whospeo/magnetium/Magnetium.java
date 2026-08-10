@@ -1,5 +1,6 @@
 package com.whospeo.magnetium;
 
+import com.whospeo.magnetium.block.ModBlocks;
 import com.whospeo.magnetium.item.ModItemGroups;
 import com.whospeo.magnetium.item.ModItems;
 import com.whospeo.magnetium.util.HammerTickHandler;
@@ -18,6 +19,7 @@ public class Magnetium implements ModInitializer {
 	public void onInitialize() {
         ModItems.registerModItems();
         ModItemGroups.register();
+		ModBlocks.registerBlocks();
 
         PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
         HammerTickHandler.register();

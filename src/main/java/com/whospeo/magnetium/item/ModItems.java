@@ -108,7 +108,7 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        Magnetium.LOGGER.info("Registering Mod Items for " + Magnetium.MOD_ID);
+        Magnetium.LOGGER.info("[Magnetium] Registering Items");
 
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             if (server.getTickCount() % COLLECTION_COOLDOWN == 0) {
