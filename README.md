@@ -8,10 +8,6 @@ Magnetium is a lightweight and highly configurable Minecraft mod that adds magne
 
 No more wasting time manually picking up blocks after intensive mining or farming sessions!
 
-If you want to support these projects and future ones, you can [buy me a Ko-fi](https://ko-fi.com/whospeo)!
-
-<a href='https://ko-fi.com/A1S425EH0Q' target='_blank'><img height='56' style='border:0px;height:56px;' src='https://storage.ko-fi.com/cdn/kofi4.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
 ---
 
 ## ✨ Features
